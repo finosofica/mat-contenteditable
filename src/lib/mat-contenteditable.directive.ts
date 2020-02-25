@@ -1,3 +1,4 @@
+
 import {
   Directive,
   ElementRef,
@@ -14,16 +15,9 @@ import { ControlValueAccessor, FormGroupDirective, NgControl, NgForm } from '@an
 import { ErrorStateMatcher, mixinErrorState, CanUpdateErrorStateCtor, CanUpdateErrorState } from '@angular/material/core';
 import { coerceBooleanProperty } from '@angular/cdk/coercion';
 import { Subject } from 'rxjs';
+import { MatInputBase } from './mat-input-base';
 
-// Boilerplate for applying mixins to MatInput.
-/** @docs-private */
-class MatInputBase {
-  constructor(public _defaultErrorStateMatcher: ErrorStateMatcher,
-    public _parentForm: NgForm,
-    public _parentFormGroup: FormGroupDirective,
-    /** @docs-private */
-    public ngControl: NgControl) { }
-}
+
 export const _MatInputMixinBase: CanUpdateErrorStateCtor & typeof MatInputBase =
   mixinErrorState(MatInputBase);
 
