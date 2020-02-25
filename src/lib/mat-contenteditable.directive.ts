@@ -9,7 +9,7 @@ import {
   Self,
   DoCheck,
 } from '@angular/core';
-import { MatFormFieldControl } from '@angular/material/form-field/form-field-control';
+import { MatFormFieldControl } from '@angular/material/form-field';
 import { ControlValueAccessor, FormGroupDirective, NgControl, NgForm } from '@angular/forms';
 import { ErrorStateMatcher, mixinErrorState, CanUpdateErrorStateCtor, CanUpdateErrorState } from '@angular/material/core';
 import { coerceBooleanProperty } from '@angular/cdk/coercion';

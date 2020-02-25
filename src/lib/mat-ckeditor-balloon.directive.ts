@@ -1,5 +1,6 @@
 import { Directive, Input } from '@angular/core';
-import { MatFormFieldControl } from '@angular/material/form-field/form-field-control';
+import { MatFormFieldControl } from '@angular/material/form-field';
+
 import { MatCkeditorDirective } from './mat-ckeditor.directive';
 
 @Directive({

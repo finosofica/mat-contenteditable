@@ -1,9 +1,11 @@
-import { Directive, Input, HostBinding, ViewContainerRef, OnInit, DoCheck, Optional, Self } from '@angular/core';
-import { MatFormFieldControl } from '@angular/material/form-field/form-field-control';
+import { Directive, Input, HostBinding, ViewContainerRef, OnInit, Optional, Self, DoCheck } from '@angular/core';
+import { MatFormFieldControl } from '@angular/material/form-field';
 import { ErrorStateMatcher, CanUpdateErrorState } from '@angular/material/core';
-import { _MatInputMixinBase } from './mat-contenteditable.directive';
+// import { CKEditorComponent } from '@ckeditor/ckeditor5-angular//ckeditor.component';
 import { Subject } from 'rxjs';
-import { NgControl, FormControl, NgForm, FormGroupDirective } from '@angular/forms';
+import { NgControl, NgForm, FormGroupDirective } from '@angular/forms';
+import { _MatInputMixinBase } from 'projects/mat-contenteditable/src/lib/mat-contenteditable.directive';
+
 
 @Directive({
   selector: '[matCkeditor]',
@@ -13,8 +15,6 @@ import { NgControl, FormControl, NgForm, FormGroupDirective } from '@angular/for
 })
 export class MatCkeditorDirective extends _MatInputMixinBase
   implements MatFormFieldControl<string>, DoCheck, CanUpdateErrorState, OnInit {
-
-  autofilled?: boolean;
 
   /**
    * Implemented as part of MatFormFieldControl.
@@ -100,19 +100,6 @@ export class MatCkeditorDirective extends _MatInputMixinBase
       // error triggers that we can't subscribe to (e.g. parent form submissions). This means
       // that whatever logic is in here has to be super lean or we risk destroying the performance.
       this.updateErrorState();
-    }
-  }
-
-  updateErrorState(): void {
-    const oldState = this.errorState;
-    const parent = this._parentFormGroup || this._parentForm;
-    const matcher = this.errorStateMatcher || this._defaultErrorStateMatcher;
-    const control = this.ngControl ? this.ngControl.control as FormControl : null;
-    const newState = matcher.isErrorState(control, parent);
-
-    if (newState !== oldState) {
-      this.errorState = newState;
-      this.stateChanges.next();
     }
   }
 
