@@ -1,6 +1,5 @@
 import { FormGroupDirective, NgControl, NgForm } from '@angular/forms';
-import { ErrorStateMatcher } from '@angular/material/core';
-
+import { ErrorStateMatcher, mixinErrorState, CanUpdateErrorStateCtor } from '@angular/material/core';
 
 export class MatInputBase {
 
@@ -9,4 +8,8 @@ export class MatInputBase {
     public _parentFormGroup: FormGroupDirective,
     /** @docs-private */
     public ngControl: NgControl) { }
+
 }
+
+export const _MatInputMixinBase: CanUpdateErrorStateCtor & typeof MatInputBase =
+  mixinErrorState(MatInputBase);

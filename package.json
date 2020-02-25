@@ -1,6 +1,6 @@
 {
   "name": "@finosofica/mat-contenteditable",
-  "version": "9.1.1",
+  "version": "9.1.2",
   "description": "Facebook TypeScript SDK for Angular",
   "peerDependencies": {
     "@angular/common": "^9.0.2",
