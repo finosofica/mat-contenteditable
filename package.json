@@ -1,6 +1,6 @@
 {
   "name": "@finosofica/mat-contenteditable",
-  "version": "0.0.1",
+  "version": "9.1.0",
   "description": "Facebook TypeScript SDK for Angular",
   "peerDependencies": {
     "@angular/common": "^9.0.2",
@@ -20,7 +20,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build --prod",
+    "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
